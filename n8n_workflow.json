@@ -1,0 +1,65 @@
+{
+  "name": "AI Ticket Analysis Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 12
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -464,
+        -16
+      ],
+      "id": "047cbc37-f01a-4974-8bf2-bee83b8dca8d",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5000/run",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -256,
+        -16
+      ],
+      "id": "03dc43a7-3e3d-48b5-9ec6-937563727134",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "c2e1b65c-e879-4fc8-8db3-dcc2f104586d",
+  "meta": {
+    "instanceId": "f2eff9d1d68a88a8affa7abb228f4798d22a8c5e5c27f93de95dd63d23b4bcbd"
+  },
+  "id": "g8xqCiDsgXjPwCHr",
+  "tags": []
+}
