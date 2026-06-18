@@ -204,3 +204,5 @@ ticket_id,ticket_text
 203,Payment deducted twice from my account.
 204,order not delivered been 1 month
 205,website crash
+206,item not delivered
+207,not able to login
